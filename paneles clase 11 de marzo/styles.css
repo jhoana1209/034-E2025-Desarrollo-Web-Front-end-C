@@ -1,0 +1,56 @@
+*{
+    font-family: 'Inter';
+}
+
+:root{
+    --pistache: #bbd686;
+    --espresso: #644536;
+    --rojo: #b2675e;
+    --verde-crema: #eef1bd;
+}
+
+html{
+    background-color:  var(--pistache);
+}
+
+.paneles{
+    display: flex;
+    height: 100vh;
+}
+
+.panel{
+    border: solid 4px var(--verde-crema);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    flex: 1; /*checa que tanto quiere que se muestre un elemento*/
+    transition: flex 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.panel p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 50px;
+}
+
+.panel p:nth-child(2){
+    opacity: 1;
+}
+
+ /*cuando el panel esta activo */
+ .panel.active{
+    flex: 5;  /*El panel activo se expande*/
+ }
+
+ .panel.active p{
+    opacity: 1; /*Mueestra el contenido del panel*/
+ }
+
+.panel.active{
+    background-color: var(--rojo) ;
+}
