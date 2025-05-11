@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Posts</title>
+    <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+    <h1>Gestor de Posts con JSONPlaceholder</h1>
+    <!--Formulario para crear nuevo posts-->
+    <h2>Crear Nuevo Post</h2>
+        <form id="postForm">
+            <div class="form-group">
+                <label for="title">Título:</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Contenido:</label>
+                <textarea id="body" required></textarea>
+            </div>
+            <button type="submit">Crear Post</button>
+        </form>
+    </div>
+    
+    <!-- Mensajes de la aplicación -->
+    <div id="message"></div>
+    
+    <!-- Lista de posts -->
+    <h2>Lista de Posts</h2>
+    <div id="loading" class="loading">Cargando posts...</div>
+    <table id="postsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="postsTableBody">
+            <!-- Aquí se cargarán los posts -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
