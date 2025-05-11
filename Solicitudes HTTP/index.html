@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de clima</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Aplicación de Clima</h1>
+        </div>
+        
+        <!--Búsqueda de Clima-->
+        <div class="input-group">
+            <input type="text" id="cityInput" placeholder="Ingresa una Ciudad">
+            <button id="searchBtn">Buscar</button>
+        </div>
+        
+        <!--Información del clima-->
+        <div id="weatherCard" class="weather-card">
+            <h2 id="cityName">Monterrey</h2>
+            
+            <div class="weather-info">
+                <p>Clima:</p>
+                <span id="weatherDesc">cielo claro</span>
+            </div>
+            
+            <div class="weather-info">
+                <p>Temperatura:</p>
+                <span id="temperature">20.31</span>°C
+            </div>
+        </div>
+        
+        <!--Mensaje de error-->
+        <div id="errorMessage" class="error">La ciudad no se encontró</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

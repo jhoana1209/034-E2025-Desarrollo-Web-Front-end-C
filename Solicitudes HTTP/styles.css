@@ -1,0 +1,99 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .weather-card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .input-group {
+            padding: 20px;
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos para alinear los datos del clima en la misma línea */
+        .weather-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .weather-info p {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .weather-info span {
+            font-weight: normal;
+            margin-left: 5px;
+            display: inline; /* Cambiamos a inline en lugar de flex */
+        }
+
+        .error {
+            color: #d32f2f;
+            padding: 10px;
+            background-color: #ffebee;
+            border-radius: 4px;
+            margin: 15px;
+            display: none;
+        }
