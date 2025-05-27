@@ -9,74 +9,73 @@ function Home({ habits, setCurrentPage }) {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <div className="text-center py-12">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent mb-6">
-          Transforma tu vida,
+      <div className="text-center py-8">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+          Seguimiento de Hábitos,
           <br />
-          <span className="text-4xl">un hábito a la vez</span>
+          <span className="text-4xl"> Un hábito a la vez</span>
         </h1>
-        <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-gray-600 mb-6">
           Crea rutinas poderosas, rastrea tu progreso y alcanza tus metas con nuestra plataforma intuitiva de seguimiento de hábitos.
         </p>
         <button
           onClick={() => setCurrentPage('habits')}
-          className="group bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center space-x-2 mx-auto"
+          className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600"
         >
-          <span>Comenzar ahora</span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <span>Ver mis Hábitos</span>
         </button>
       </div>
 
-      {/* Dashboard rápido */}
+      {/* cards de resumen */}
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+        <div className="bg-white rounded-lg p-6 shadow-sm border">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
               <Check className="w-6 h-6 text-green-400" />
             </div>
             <div>
-              <p className="text-white/60 text-sm">Completados hoy</p>
-              <p className="text-2xl font-bold text-white">{completedToday}/{totalHabits}</p>
+              <p className="text-gray-600 text-sm">Completados hoy</p>
+              <p className="text-2xl font-bold text-gray-800">{completedToday}/{totalHabits}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+        <div className="bg-white rounded-lg p-6 shadow-sm border">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
-              <Target className="w-6 h-6 text-purple-400" />
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <Target className="w-6 h-6 text-blue-600" />
             </div>
             <div>
-              <p className="text-white/60 text-sm">Progreso diario</p>
-              <p className="text-2xl font-bold text-white">{Math.round(progressPercentage)}%</p>
+              <p className="text-gray-600 text-sm">Progreso diario</p>
+              <p className="text-2xl font-bold text-gray-800">{Math.round(progressPercentage)}%</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+        <div className="bg-white rounded-lg p-6 shadow-sm border">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-              <Zap className="w-6 h-6 text-orange-400" />
+            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+              <Zap className="w-6 h-6 text-orange-600" />
             </div>
             <div>
-              <p className="text-white/60 text-sm">Mejor racha</p>
-              <p className="text-2xl font-bold text-white">{Math.max(...habits.map(h => h.streak), 0)} días</p>
+              <p className="text-gray-600 text-sm">Mejor racha</p>
+              <p className="text-2xl font-bold text-gray-800">{Math.max(...habits.map(h => h.streak), 0)} días</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Barra de progreso animada */}
+      {/* Barra de progreso simple */}
       {totalHabits > 0 && (
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-          <h3 className="text-lg font-semibold text-white mb-4">Progreso de hoy</h3>
-          <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
+        <div className="bg-white rounded-lg p-6 shadow-sm border">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Progreso de hoy</h3>
+          <div className="w-full bg-gray-200 rounded-full h-4">
             <div 
-              className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out"
+              className="h-4 bg-blue-500 rounded-fuññ"
               style={{ width: `${progressPercentage}%` }}
             />
           </div>
-          <p className="text-white/70 text-sm mt-2">
+          <p className="text-gray-600 text-sm mt-2">
             {completedToday === totalHabits ? '¡Excelente! Has completado todos tus hábitos de hoy.' : `Te faltan ${totalHabits - completedToday} hábitos por completar.`}
           </p>
         </div>
